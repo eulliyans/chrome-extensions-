@@ -1,0 +1,8 @@
+{
+  "manifest_version": 3,
+  "name": "Quick Autofill",
+  "version": "1.0",
+  "description": "Save your basic details once and fill forms with one click.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": { "default_popup": "popup.html", "default_title": "Quick Autofill" }
+}

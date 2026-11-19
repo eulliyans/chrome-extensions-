@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quick Autofill</title>
+  <style>
+    body { width: 300px; margin: 0; padding: 14px; font: 13px/1.4 system-ui, sans-serif; color: #1e2924; }
+    h1 { margin: 0 0 10px; font-size: 16px; color: #123b2b; }
+    label { display: block; margin-top: 8px; font-size: 12px; font-weight: 600; }
+    input { width: 100%; margin-top: 3px; padding: 7px 9px; border: 1px solid #d5dcd7; border-radius: 6px; font: inherit; }
+    .row { display: flex; gap: 8px; margin-top: 14px; }
+    button { flex: 1; padding: 9px; border: 0; border-radius: 6px; font: inherit; font-weight: 600; cursor: pointer; }
+    #fill { background: #123b2b; color: #fff; }
+    #save { background: #e7ebe6; color: #123b2b; }
+    #status { min-height: 18px; margin: 10px 0 0; color: #1d6047; font-weight: 600; }
+    .note { margin: 6px 0 0; color: #6d7771; font-size: 11px; }
+  </style>
+</head>
+<body>
+  <h1>Quick Autofill</h1>
+  <label>Full name <input id="fullName" autocomplete="off"></label>
+  <label>Email <input id="email" type="email" autocomplete="off"></label>
+  <label>Phone <input id="phone" type="tel" autocomplete="off"></label>
+  <label>Address <input id="address" autocomplete="off"></label>
+  <label>City <input id="city" autocomplete="off"></label>
+  <label>Postal code <input id="postal" autocomplete="off"></label>
+  <label>Country <input id="country" autocomplete="off"></label>
+  <div class="row"><button id="save">Save</button><button id="fill">Fill this page</button></div>
+  <p id="status" role="status"></p>
+  <p class="note">Do not store passwords or card numbers here.</p>
+  <script src="popup.js"></script>
+</body>
+</html>
