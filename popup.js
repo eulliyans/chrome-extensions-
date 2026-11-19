@@ -52,7 +52,7 @@ function fillPage(data) {
   document.querySelectorAll("input, textarea, select").forEach((el) => {
     if (el.disabled || el.readOnly || el.offsetParent === null) return;
     if (/hidden|password|checkbox|radio|file|submit|button|image|reset/.test(el.type)) return;
-    if (el.tagName !== "SELECT" && el.value) return; // never overwrite what is already typed
+    if (el.value) return; // Never overwrite existing values, including SELECT fields.
 
     const tokens = (el.getAttribute("autocomplete") || "").toLowerCase().split(/\s+/);
     const hint = [el.name, el.id, el.placeholder, el.getAttribute("aria-label"), el.labels?.[0]?.textContent].join(" ");
