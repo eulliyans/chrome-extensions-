@@ -56,7 +56,30 @@ function fillPage(data) {
 
     const tokens = (el.getAttribute("autocomplete") || "").toLowerCase().split(/\s+/);
     const hint = [el.name, el.id, el.placeholder, el.getAttribute("aria-label"), el.labels?.[0]?.textContent].join(" ");
+const nameParts = (data.fullName || "").trim().split(/\s+/);
 
+if (
+  tokens.includes("given-name") ||
+  /first.?name|given.?name/i.test(hint)
+) {
+  if (nameParts[0]) {
+    setValue(el, nameParts[0]);
+    filled++;
+  }
+  return;
+}
+
+if (
+  tokens.includes("family-name") ||
+  /last.?name|family.?name|surname/i.test(hint)
+) {
+  const lastName = nameParts.slice(1).join(" ");
+  if (lastName) {
+    setValue(el, lastName);
+    filled++;
+  }
+  return;
+}
     const rule = rules.find(([, autocomplete, pattern]) =>
       autocomplete.some((token) => tokens.includes(token)) || pattern.test(hint) ||
       (el.type === "email" && autocomplete[0] === "email") ||
