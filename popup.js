@@ -80,6 +80,17 @@ if (
   }
   return;
 }
+    if (
+  tokens.includes("additional-name") ||
+  /middle.?name/i.test(hint)
+) {
+  const middleName = nameParts.slice(1, -1).join(" ");
+  if (middleName) {
+    setValue(el, middleName);
+    filled++;
+  }
+  return;
+}
     const rule = rules.find(([, autocomplete, pattern]) =>
       autocomplete.some((token) => tokens.includes(token)) || pattern.test(hint) ||
       (el.type === "email" && autocomplete[0] === "email") ||
