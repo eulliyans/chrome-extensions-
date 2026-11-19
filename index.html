@@ -6,65 +6,121 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quick Autofill | EULLIYAN'S</title>
   <meta name="description" content="Quick Autofill - Save time with smart form filling.">
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff9f2;
-      color: #795548;
-    }
+  
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff9f2;
+    color: #795548;
+  }
+
+  header {
+    padding: 12px 6%;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-weight: bold;
+    font-size: 19px;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 8px 15px 12px;
+  }
+
+  h1 {
+    font-size: clamp(32px, 6vw, 48px);
+    margin: 8px 0;
+  }
+
+  h1 span {
+    color: #f97316;
+  }
+
+  .hero p {
+    max-width: 480px;
+    margin: 8px auto 12px;
+    line-height: 1.5;
+    color: #806d60;
+    font-size: 14px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 10px;
+    background: #f97316;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .features {
+    padding: 12px 6%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 12px;
+  }
+
+  .feature {
+    background: white;
+    padding: 15px;
+    border-radius: 14px;
+  }
+
+  .feature h2 {
+    font-size: 18px;
+    margin: 5px 0 8px;
+  }
+
+  .feature p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .feature:nth-child(1) {
+    border-top: 4px solid #f97316;
+  }
+
+  .feature:nth-child(2) {
+    border-top: 4px solid #facc15;
+  }
+
+  .feature:nth-child(3) {
+    border-top: 4px solid #7dd3fc;
+  }
+
+  footer {
+    text-align: center;
+    padding: 15px;
+    background: #795548;
+    color: white;
+    font-size: 13px;
+  }
+
+  @media (max-width: 480px) {
     header {
-      padding: 24px 8%;
-      background: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 12px 5%;
     }
-    .logo { font-weight: bold; font-size: 21px; }
-    .hero {
-  text-align: center;
-  padding: 20px 20px 30px;
-}
-    h1 { font-size: clamp(38px, 7vw, 65px); }
-    h1 span { color: #f97316; }
-    .hero p {
-      max-width: 550px;
-      margin: 20px auto;
-      line-height: 1.8;
-      color: #806d60;
-    }
-    .btn {
-      display: inline-block;
-      padding: 15px 28px;
-      margin: 10px;
-      border-radius: 12px;
-      background: #f97316;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+
     .features {
-      padding: 50px 8%;
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-      gap: 20px;
+      grid-template-columns: 1fr;
     }
-    .feature {
-      background: white;
-      padding: 25px;
-      border-radius: 18px;
-    }
-    .feature:nth-child(2) { border-top: 5px solid #facc15; }
-    .feature:nth-child(3) { border-top: 5px solid #7dd3fc; }
-    .feature:nth-child(1) { border-top: 5px solid #f97316; }
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #795548;
-      color: white;
-    }
-  </style>
+  }
+</style>
+
 </head>
 <body>
   <header>
